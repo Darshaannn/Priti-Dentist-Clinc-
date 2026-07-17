@@ -415,4 +415,43 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnHI) {
         btnHI.addEventListener('click', () => setLanguage('hi'));
     }
+
+    // 8. Stats Count-up Animation on scroll
+    const statsGrid = document.querySelector('.about-stats-grid');
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    
+    if (statsGrid && statNumbers.length > 0) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statNumbers.forEach(num => {
+                        const target = parseInt(num.getAttribute('data-target'));
+                        const duration = 2000; // 2 seconds animation
+                        const startTime = performance.now();
+                        
+                        function updateCount(currentTime) {
+                            const elapsedTime = currentTime - startTime;
+                            const progress = Math.min(elapsedTime / duration, 1);
+                            
+                            // Easing: easeOutQuad
+                            const easeProgress = progress * (2 - progress);
+                            const currentCount = Math.floor(easeProgress * target);
+                            
+                            num.textContent = currentCount;
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                num.textContent = target;
+                            }
+                        }
+                        requestAnimationFrame(updateCount);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        statsObserver.observe(statsGrid);
+    }
 });

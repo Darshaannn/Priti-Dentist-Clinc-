@@ -2360,18 +2360,38 @@ button, input, textarea {
     }
     
     .sticky-stack-btn {
-        width: 220px !important;
-        height: 56px !important;
-        font-size: 1.05rem !important;
-        border-radius: 14px !important;
-        gap: 12px !important;
+        width: 175px !important;
+        height: 44px !important;
+        font-size: 0.85rem !important;
+        border-radius: 10px !important;
+        gap: 8px !important;
     }
 
     .sticky-stack-btn.whatsapp-btn .whatsapp-icon-svg,
     .sticky-stack-btn.call-btn i {
-        width: 20px !important;
-        height: 20px !important;
+        width: 16px !important;
+        height: 16px !important;
     }
+
+    /* Hero button scaling to fit on mobile in one line */
+    .hero-cta-actions {
+        gap: 10px !important;
+    }
+
+    .btn-touch-solid, 
+    .btn-call-outline {
+        padding: 12px 18px !important;
+        font-size: 0.825rem !important;
+        white-space: nowrap !important;
+    }
+}
+
+.stat-plus {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    display: inline-block;
 }
 
 /* Map Section */
