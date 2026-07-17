@@ -266,14 +266,18 @@
                                     <path d="M35 25 C 38 23, 48 20, 50 25 C 52 20, 62 23, 65 25 C 73 32, 75 52, 73 68 C 71 78, 65 88, 63 93 C 61 98, 55 98, 55 93 C 55 83, 58 73, 58 65 C 58 60, 55 58, 52 58 C 49 58, 46 60, 46 65 C 46 73, 49 83, 49 93 C 49 98, 43 98, 41 93 C 39 88, 33 78, 31 68 C 29 52, 31 32, 35 25 Z" fill="none" stroke="currentColor" stroke-width="5" />
                                 </svg>
                             </div>
-                            <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                            <div class="stat-value">
+                                <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                            </div>
                             <span class="stat-label" data-translate="stat_exp_desc">Years of Experience</span>
                         </div>
                         <div class="stat-item">
                             <div class="stat-icon">
                                 <i data-lucide="graduation-cap"></i>
                             </div>
-                            <span class="stat-number" data-target="5000">0</span><span class="stat-plus">+</span>
+                            <div class="stat-value">
+                                <span class="stat-number" data-target="5000">0</span><span class="stat-plus">+</span>
+                            </div>
                             <span class="stat-label" data-translate="stat_patients_desc">Happy Patients</span>
                         </div>
                         <div class="stat-item">
@@ -425,74 +429,7 @@
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <div class="contact-grid-container">
-                <!-- Column 1: Contact Form -->
-                <div class="contact-form-column">
-                    <div class="badge">
-                        <span class="badge-text" data-translate="contact_badge">GET IN TOUCH</span>
-                    </div>
-                    <h2 class="section-title" data-translate="contact_title">
-                        We're here<br><span class="italic-highlight">to help.</span> 
-                        <svg viewBox="0 0 24 24" class="title-heart-svg" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="1.5" />
-                        </svg>
-                    </h2>
-                    <span class="divider-line"></span>
-                    <p class="section-subtitle" data-translate="contact_subtitle">Fill in your details and our team will get back to you shortly.</p>
-                    
-                    <form class="enquiry-form-modern" id="enquiryForm">
-                        <div class="form-row-modern">
-                            <div class="input-with-icon">
-                                <i data-lucide="user"></i>
-                                <input type="text" id="name" name="name" placeholder="Full Name" data-translate-placeholder="placeholder_name" required>
-                            </div>
-                            <div class="input-with-icon">
-                                <i data-lucide="phone"></i>
-                                <input type="tel" id="phone" name="phone" placeholder="Phone Number" data-translate-placeholder="placeholder_phone" required>
-                            </div>
-                        </div>
-                        <div class="input-with-icon">
-                            <i data-lucide="mail"></i>
-                            <input type="email" id="email" name="email" placeholder="Email Address" data-translate-placeholder="placeholder_email" required>
-                        </div>
-                        <div class="input-with-icon textarea-wrapper">
-                            <i data-lucide="pencil" class="textarea-icon"></i>
-                            <textarea id="message" name="message" placeholder="Your Message" data-translate-placeholder="placeholder_message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit-modern">
-                            <span data-translate="btn_send_message">Send Message</span>
-                            <i data-lucide="arrow-right"></i>
-                        </button>
-                    </form>
-                    <div class="form-success-message" id="formSuccess">
-                        <i data-lucide="check-circle-2"></i>
-                        <h3 data-translate="form_success_title">Thank you!</h3>
-                        <p data-translate="form_success_desc">Your enquiry has been sent. We will get back to you shortly.</p>
-                    </div>
-
-                    <!-- Prefer to Talk horizontal block -->
-                    <div class="talk-cta-box">
-                        <div class="talk-cta-left">
-                            <div class="talk-icon-circle">
-                                <i data-lucide="headset"></i>
-                            </div>
-                            <div class="talk-text">
-                                <h4 data-translate="talk_cta_title">Prefer to talk?</h4>
-                                <p data-translate="talk_cta_desc">Call us directly. We're happy to assist you.</p>
-                            </div>
-                        </div>
-                        <div class="talk-cta-right">
-                            <div class="talk-icon-circle alt">
-                                <i data-lucide="phone"></i>
-                            </div>
-                            <div class="talk-text">
-                                <h4>+91 97691 20744</h4>
-                                <p data-translate="talk_hours">(Mon–Sat, 10:30am – 09:00pm)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 2: Clinic Details -->
+                <!-- Column 1: Clinic Details -->
                 <div class="clinic-details-column">
                     <div class="badge">
                         <span class="badge-text" data-translate="details_badge">CLINIC DETAILS</span>
@@ -558,18 +495,22 @@
                     <div class="details-dot-grid"></div>
                 </div>
 
-                <!-- Column 3: Reception Visual -->
-                <div class="clinic-image-column">
-                    <img src="assets/images/clinic_reception.png" alt="PritiSmile Clinic Reception Area" class="clinic-interior-img">
+                <!-- Column 2: Google Map -->
+                <div class="clinic-map-column">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0076383617305!2d72.8856236!3d19.1030048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c875d3155555%3A0xe54d89a2b535dbb7!2sPansare%20Sadan%20Sakinaka!5e0!3m2!1sen!2sin!4v1715970000000!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style="border:0; min-height:450px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="PritiSmile Dental Clinic Location">
+                    </iframe>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0076383617305!2d72.8856236!3d19.1030048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c875d3155555%3A0xe54d89a2b535dbb7!2sPansare%20Sadan%20Sakinaka!5e0!3m2!1sen!2sin!4v1715970000000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
 
     <!-- Footer -->
     <footer class="main-footer">

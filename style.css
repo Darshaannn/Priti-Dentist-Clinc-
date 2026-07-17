@@ -1307,8 +1307,9 @@ button, input, textarea {
 
 .contact-grid-container {
     display: grid;
-    grid-template-columns: 1.25fr 1fr 0.9fr;
+    grid-template-columns: 1fr 1.4fr;
     width: 100%;
+    min-height: 560px;
 }
 
 .contact-form-column {
@@ -1485,12 +1486,11 @@ button, input, textarea {
 /* Clinic Details Column */
 .clinic-details-column {
     background-color: var(--bg-card);
-    padding: 80px 50px;
+    padding: 80px 60px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
 }
 
@@ -1567,17 +1567,22 @@ button, input, textarea {
     z-index: 1;
 }
 
-/* Reception Image Column */
-.clinic-image-column {
+/* Map Column inside Contact Section */
+.clinic-map-column {
     position: relative;
     overflow: hidden;
-    height: 100%;
+    min-height: 500px;
+    border-left: 1px solid var(--border-color);
 }
 
-.clinic-interior-img {
+.clinic-map-column iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    border: 0;
+    display: block;
 }
 
 /* Success Message State */
@@ -1616,45 +1621,33 @@ button, input, textarea {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .contact-grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .clinic-image-column {
-        display: none; /* Hide interior photo on smaller layouts to prioritize details */
-    }
-}
-
+/* Responsive adjustments — Contact Section */
 @media (max-width: 900px) {
     .contact-grid-container {
         grid-template-columns: 1fr;
     }
-    
-    .clinic-details-column {
+
+    .clinic-map-column {
+        grid-column: 1;
+        min-height: 320px;
         border-left: none;
-        border-right: none;
         border-top: 1px solid var(--border-color);
-        padding: 60px 40px;
     }
-    
-    .contact-form-column {
+
+    .clinic-details-column {
+        border-right: none;
+        border-top: none;
         padding: 60px 40px;
     }
 }
 
 @media (max-width: 600px) {
-    .form-row-modern,
-    .talk-cta-box {
-        grid-template-columns: 1fr;
+    .clinic-map-column {
+        min-height: 260px;
     }
-    
-    .talk-cta-right {
-        border-left: none;
-        border-top: 1px solid var(--border-color);
-        padding-left: 0;
-        padding-top: 20px;
+
+    .clinic-details-column {
+        padding: 40px 20px;
     }
 }
 
@@ -2322,6 +2315,18 @@ button, input, textarea {
         font-weight: 700 !important;
         color: var(--primary-color) !important;
     }
+    .about-stats-grid .stat-value {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        gap: 1px !important;
+    }
+    .about-stats-grid .stat-plus {
+        font-size: 1.05rem !important;
+        font-weight: 700 !important;
+        color: var(--primary-color) !important;
+    }
     .about-stats-grid .stat-label {
         font-size: 0.6rem !important;
         line-height: 1.2 !important;
@@ -2386,27 +2391,20 @@ button, input, textarea {
     }
 }
 
+/* Stat number + plus inline row */
+.stat-value {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1px;
+    line-height: 1;
+}
+
 .stat-plus {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     color: inherit;
-    display: inline-block;
+    display: inline;
+    line-height: 1;
 }
-
-/* Map Section */
-.map-section {
-    width: 100%;
-    height: 400px;
-    background-color: var(--bg-warm);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.map-section iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-
