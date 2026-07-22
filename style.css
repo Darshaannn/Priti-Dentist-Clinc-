@@ -133,45 +133,30 @@ button, input, textarea {
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
+    text-decoration: none;
 }
 
-.logo-icon-circle {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
+.logo-img-crop {
+    height: 56px;
+    overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-primary);
+    align-items: flex-start; /* Aligns to top, cropping the extra space at the bottom */
 }
 
-.logo-tooth-svg {
-    width: 22px;
-    height: 22px;
+.logo-img {
+    height: 105px; /* Scaled up so we can crop the bottom empty space via height boundary */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: -49px; /* Pulls up the bottom boundary to hide excess blank space */
+    transition: var(--transition);
 }
 
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
+.logo-wrapper:hover .logo-img {
+    transform: scale(1.02);
 }
 
-.logo-primary {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.01em;
-}
-
-.logo-secondary {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: var(--text-secondary);
-    text-transform: uppercase;
+.logo-wrapper.white-theme .logo-img {
+    filter: brightness(0) invert(1);
 }
 
 /* Nav Menu */
@@ -1023,6 +1008,86 @@ button, input, textarea {
     margin-top: 2px;
 }
 
+/* Trust Pillars Card */
+.trust-pillars-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(45, 37, 33, 0.02);
+    position: relative;
+    transition: var(--transition);
+}
+
+.trust-pillars-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(166, 83, 53, 0.05);
+}
+
+.trust-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.trust-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.trust-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.trust-item-box {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.trust-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.trust-item-box:hover .trust-icon-box {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+.trust-icon-box i {
+    width: 22px;
+    height: 22px;
+}
+
+.trust-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.trust-content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
 /* Testimonials Section */
 .testimonials-section {
     padding: 100px 0;
@@ -1272,6 +1337,12 @@ button, input, textarea {
         gap: 50px;
     }
     
+    .trust-pillars-card {
+        max-width: 550px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
     .doctor-image-frame {
         margin: 0 auto;
     }
@@ -1293,6 +1364,31 @@ button, input, textarea {
     
     .patient-testimonial-card {
         flex: 0 0 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-pillars-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+    .trust-title {
+        font-size: 1.65rem;
+    }
+    .trust-subtitle {
+        margin-bottom: 20px;
+    }
+    .trust-item-box {
+        gap: 14px;
+    }
+    .trust-icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
+    .trust-icon-box i {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -1953,18 +2049,7 @@ button, input, textarea {
     z-index: 2;
 }
 
-.logo-wrapper.white-theme .logo-primary {
-    color: #ffffff;
-}
 
-.logo-wrapper.white-theme .logo-secondary {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.logo-wrapper.white-theme .logo-icon-circle {
-    border-color: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-}
 
 .copyright-text {
     font-size: 0.75rem;

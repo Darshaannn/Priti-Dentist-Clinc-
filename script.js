@@ -126,16 +126,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialTrack = document.getElementById('testimonialTrack');
     const prevBtn = document.getElementById('prevTestimonial');
     const nextBtn = document.getElementById('nextTestimonial');
-    const dots = document.querySelectorAll('#sliderDots .dot');
+    const sliderDotsContainer = document.getElementById('sliderDots');
     let currentSlide = 0;
 
-    function getSlidesCount() {
-        const isMobile = window.innerWidth <= 900;
-        return isMobile ? 3 : 2;
-    }
-
-    function updateSlider(index) {
-        if (testimonialTrack) {
+    function initSlider() {
+        if (!testimonialTrack) return;
+        
+        const cards = testimonialTrack.querySelectorAll('.patient-testimonial-card');
+        const totalCards = cards.length;
+        
+        function getSlidesCount() {
+            const isMobile = window.innerWidth <= 900;
+            return isMobile ? totalCards : totalCards - 1;
+        }
+        
+        function renderDots() {
+            if (!sliderDotsContainer) return;
+            sliderDotsContainer.innerHTML = '';
+            const totalSlides = getSlidesCount();
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = i === currentSlide ? 'dot active' : 'dot';
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', () => {
+                    updateSlider(i);
+                });
+                sliderDotsContainer.appendChild(dot);
+            }
+        }
+        
+        function updateSlider(index) {
             const totalSlides = getSlidesCount();
             currentSlide = index;
             if (currentSlide >= totalSlides) currentSlide = 0;
@@ -145,10 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isMobile) {
                 testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
             } else {
-                testimonialTrack.style.transform = currentSlide === 0 ? 'translateX(0)' : 'translateX(calc(-50% - 15px))';
+                testimonialTrack.style.transform = `translateX(calc(-${currentSlide * 50}% - ${currentSlide * 15}px))`;
             }
             
-            // Update dots
+            const dots = sliderDotsContainer.querySelectorAll('.dot');
             dots.forEach((dot, idx) => {
                 if (idx === currentSlide) {
                     dot.classList.add('active');
@@ -157,31 +177,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-    }
 
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            updateSlider(currentSlide + 1);
+        if (nextBtn) {
+            const newNextBtn = nextBtn.cloneNode(true);
+            nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+            newNextBtn.addEventListener('click', () => {
+                updateSlider(currentSlide + 1);
+            });
+        }
+
+        if (prevBtn) {
+            const newPrevBtn = prevBtn.cloneNode(true);
+            prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+            newPrevBtn.addEventListener('click', () => {
+                updateSlider(currentSlide - 1);
+            });
+        }
+        
+        window.addEventListener('resize', () => {
+            const totalSlides = getSlidesCount();
+            if (currentSlide >= totalSlides) {
+                currentSlide = totalSlides - 1;
+            }
+            updateSlider(currentSlide);
+            renderDots();
         });
+        
+        renderDots();
+        updateSlider(currentSlide);
     }
+    
+    initSlider();
 
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            updateSlider(currentSlide - 1);
-        });
-    }
 
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            const index = parseInt(dot.getAttribute('data-index'));
-            updateSlider(index);
-        });
-    });
-
-    // Handle window resize to reset slide layout
-    window.addEventListener('resize', () => {
-        updateSlider(0);
-    });
 
     // 7. Language Switcher (EN | HI)
     const translations = {
@@ -229,6 +257,14 @@ document.addEventListener('DOMContentLoaded', () => {
             about_title: 'About <span class="italic-highlight">Dr. Priti</span> Parmar',
             about_subtitle: "B.D.S. (Mumbai) &nbsp;|&nbsp; Dental Surgeon",
             about_desc: "Dr. Priti Parmar is dedicated to providing gentle, ethical and personalized dental care. With years of experience and a passion for patient well-being, she focuses on prevention, long-term oral health, and creating beautiful, confident smiles.",
+            trust_title: "Our Quality Promise",
+            trust_subtitle: "Why patients trust us with their family's smiles",
+            trust_p1_title: "100% Sterile & Hygienic",
+            trust_p1_desc: "Strict sanitization and chemical/steam sterilization matching international clinic standards.",
+            trust_p2_title: "Patient-First Care",
+            trust_p2_desc: "Empathetic, gentle treatments with clear upfront pricing and transparent explanations.",
+            trust_p3_title: "Modern Dental Tech",
+            trust_p3_desc: "Advanced dental tools for less invasive, painless, and extremely precise treatments.",
             stat_exp_desc: "Years of Experience",
             stat_patients_desc: "Happy Patients",
             stat_cert_num: "Certified",
@@ -240,6 +276,8 @@ document.addEventListener('DOMContentLoaded', () => {
             test_body_neha: "Very friendly and explains everything patiently. The clinic is clean, modern and makes you feel comfortable.",
             test_body_priyanka: "Amazing experience! Got my treatment done without any pain. Highly recommend Dr. Priti Parmar.",
             test_body_rahul: "Professional, gentle and genuinely cares about her patients. The best dental care I've ever received.",
+            test_body_vikram: "Highly professional clinic. Dr. Priti and her staff follow top-notch hygiene protocols. The root canal treatment was completely painless, and she explained the process very clearly.",
+            test_body_sunita: "Excellent experience for my children. Dr. Priti Parmar is very gentle and friendly with kids, making them feel absolutely safe and comfortable during the extraction.",
             test_google_btn: "Give us Reviews on google 😊",
             contact_badge: "GET IN TOUCH",
             contact_title: 'We\'re here<br><span class="italic-highlight">to help.</span>',
@@ -324,6 +362,14 @@ document.addEventListener('DOMContentLoaded', () => {
             about_title: 'के बारे में <span class="italic-highlight">डॉ. प्रीति</span> परमार',
             about_subtitle: "बी.डी.एस. (मुंबई) &nbsp;|&nbsp; दंत शल्य चिकित्सक",
             about_desc: "डॉ. प्रीति परमार कोमल, नैतिक और व्यक्तिगत दंत चिकित्सा देखभाल प्रदान करने के लिए समर्पित हैं। वर्षों के अनुभव और रोगी कल्याण के जुनून के साथ, वह रोकथाम, दीर्घकालिक मौखिक स्वास्थ्य और सुंदर, आत्मविश्वास से भरी मुस्कान बनाने पर ध्यान केंद्रित करती हैं।",
+            trust_title: "हमारा गुणवत्ता संकल्प",
+            trust_subtitle: "मरीज अपनी मुस्कान के लिए हम पर भरोसा क्यों करते हैं",
+            trust_p1_title: "100% स्वच्छ और विसंक्रमित",
+            trust_p1_desc: "अंतरराष्ट्रीय मानकों के अनुसार कठोर स्वच्छता और उपकरणों की पूर्ण नसबंदी।",
+            trust_p2_title: "मरीज-प्रथम दृष्टिकोण",
+            trust_p2_desc: "बिना किसी छिपे हुए खर्च के, स्पष्टीकरण के साथ कोमल और संवेदनशील इलाज।",
+            trust_p3_title: "आधुनिक डेंटल तकनीक",
+            trust_p3_desc: "अत्याधुनिक उपकरणों द्वारा दर्द रहित और सटीक उपचार।",
             stat_exp_desc: "वर्षों का अनुभव",
             stat_patients_desc: "संतुष्ट मरीज",
             stat_cert_num: "प्रमाणित",
@@ -335,6 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
             test_body_neha: "बहुत दोस्ताना व्यवहार और धैर्यपूर्वक सब कुछ समझाती हैं। क्लीनिक साफ, आधुनिक है और आपको सहज महसूस कराता है।",
             test_body_priyanka: "अद्भुत अनुभव! बिना किसी दर्द के मेरा इलाज हो गया। डॉ. प्रीति परमार की अत्यधिक अनुशंसा करते हैं।",
             test_body_rahul: "पेशेवर, सौम्य और वास्तव में अपने मरीजों की परवाह करती हैं। दंत चिकित्सा की सबसे अच्छी देखभाल जो मुझे कभी मिली है।",
+            test_body_vikram: "अत्यंत पेशेवर क्लीनिक। डॉ. प्रीति और उनका स्टाफ सर्वोत्तम स्वच्छता नियमों का पालन करता है। रूट कैनाल का इलाज पूरी तरह से दर्द रहित था, और उन्होंने प्रक्रिया को बहुत स्पष्ट रूप से समझाया।",
+            test_body_sunita: "मेरे बच्चों के लिए बेहतरीन अनुभव। डॉ. प्रीति परमार बच्चों के साथ बहुत कोमल और मित्रवत हैं, जिससे वे दांत निकालने के दौरान बिल्कुल सुरक्षित और सहज महसूस करते हैं।",
             test_google_btn: "हमें गूगल पर समीक्षाएं दें 😊",
             contact_badge: "संपर्क करें",
             contact_title: 'हम यहाँ हैं<br><span class="italic-highlight">आपकी मदद के लिए।</span>',

@@ -20,27 +20,8 @@
     <header class="main-header" id="header">
         <div class="container header-container">
             <a href="#home" class="logo-wrapper">
-                <div class="logo-icon-circle">
-                    <svg viewBox="0 0 100 100" class="logo-tooth-svg">
-                        <path d="M35 25 
-                                 C 38 23, 48 20, 50 25 
-                                 C 52 20, 62 23, 65 25 
-                                 C 73 32, 75 52, 73 68 
-                                 C 71 78, 65 88, 63 93 
-                                 C 61 98, 55 98, 55 93 
-                                 C 55 83, 58 73, 58 65 
-                                 C 58 60, 55 58, 52 58 
-                                 C 49 58, 46 60, 46 65 
-                                 C 46 73, 49 83, 49 93 
-                                 C 49 98, 43 98, 41 93 
-                                 C 39 88, 33 78, 31 68 
-                                 C 29 52, 31 32, 35 25 Z" 
-                              fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <span class="logo-primary">PritiSmile</span>
-                    <span class="logo-secondary">Dental Clinic</span>
+                <div class="logo-img-crop">
+                    <img src="assets/Logo.png" alt="PritiSmile Dental Clinic Logo" class="logo-img">
                 </div>
             </a>
             
@@ -267,7 +248,7 @@
                                 </svg>
                             </div>
                             <div class="stat-value">
-                                <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                                <span class="stat-number" data-target="18">0</span><span class="stat-plus">+</span>
                             </div>
                             <span class="stat-label" data-translate="stat_exp_desc">Years of Experience</span>
                         </div>
@@ -298,16 +279,39 @@
                 </div>
                 
                 <div class="about-right">
-                    <div class="doctor-image-frame">
-                        <img src="assets/images/doctor_priti_parmar.png" alt="Dr. Priti Parmar - Dental Surgeon" class="doctor-img">
-                        <!-- Cursive signature banner -->
-                        <div class="signature-banner">
-                            <div class="banner-quote-icon">
-                                <i data-lucide="quote"></i>
+                    <div class="trust-pillars-card">
+                        <h3 class="trust-title" data-translate="trust_title">Our Quality Promise</h3>
+                        <p class="trust-subtitle" data-translate="trust_subtitle">Why patients trust us with their family's smiles</p>
+                        
+                        <div class="trust-items">
+                            <div class="trust-item-box">
+                                <div class="trust-icon-box">
+                                    <i data-lucide="shield-check"></i>
+                                </div>
+                                <div class="trust-content">
+                                    <h4 data-translate="trust_p1_title">100% Sterile & Hygienic</h4>
+                                    <p data-translate="trust_p1_desc">Strict sanitization and chemical/steam sterilization matching international clinic standards.</p>
+                                </div>
                             </div>
-                            <div class="banner-text">
-                                <span class="signature-font">Priti Parmar</span>
-                                <span class="signature-sub" data-translate="about_quote">Your smile. My priority.</span>
+                            
+                            <div class="trust-item-box">
+                                <div class="trust-icon-box">
+                                    <i data-lucide="heart-handshake"></i>
+                                </div>
+                                <div class="trust-content">
+                                    <h4 data-translate="trust_p2_title">Patient-First Care</h4>
+                                    <p data-translate="trust_p2_desc">Empathetic, gentle treatments with clear upfront pricing and transparent explanations.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="trust-item-box">
+                                <div class="trust-icon-box">
+                                    <i data-lucide="sparkles"></i>
+                                </div>
+                                <div class="trust-content">
+                                    <h4 data-translate="trust_p3_title">Modern Dental Tech</h4>
+                                    <p data-translate="trust_p3_desc">Advanced dental tools for less invasive, painless, and extremely precise treatments.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -333,9 +337,6 @@
                                 Very friendly and explains everything patiently. The clinic is clean, modern and makes you feel comfortable.
                             </p>
                             <div class="testimonial-profile-group">
-                                <div class="patient-profile">
-                                    <img src="assets/images/profile_neha.png" alt="Neha S.">
-                                </div>
                                 <div class="patient-meta">
                                     <span class="patient-name">Neha S.</span>
                                     <div class="star-rating">
@@ -356,9 +357,6 @@
                                 Amazing experience! Got my treatment done without any pain. Highly recommend Dr. Priti Parmar.
                             </p>
                             <div class="testimonial-profile-group">
-                                <div class="patient-profile">
-                                    <img src="assets/images/profile_priyanka.png" alt="Priyanka M.">
-                                </div>
                                 <div class="patient-meta">
                                     <span class="patient-name">Priyanka M.</span>
                                     <div class="star-rating">
@@ -379,11 +377,48 @@
                                 Professional, gentle and genuinely cares about her patients. The best dental care I've ever received.
                             </p>
                             <div class="testimonial-profile-group">
-                                <div class="patient-profile">
-                                    <img src="assets/images/profile_rahul.png" alt="Rahul M.">
-                                </div>
                                 <div class="patient-meta">
                                     <span class="patient-name">Rahul M.</span>
+                                    <div class="star-rating">
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="patient-testimonial-card">
+                            <div class="quote-symbol">“</div>
+                            <p class="testimonial-body" data-translate="test_body_vikram">
+                                Highly professional clinic. Dr. Priti and her staff follow top-notch hygiene protocols. The root canal treatment was completely painless, and she explained the process very clearly.
+                            </p>
+                            <div class="testimonial-profile-group">
+                                <div class="patient-meta">
+                                    <span class="patient-name">Vikram M.</span>
+                                    <div class="star-rating">
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                        <i data-lucide="star" class="star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="patient-testimonial-card">
+                            <div class="quote-symbol">“</div>
+                            <p class="testimonial-body" data-translate="test_body_sunita">
+                                Excellent experience for my children. Dr. Priti Parmar is very gentle and friendly with kids, making them feel absolutely safe and comfortable during the extraction.
+                            </p>
+                            <div class="testimonial-profile-group">
+                                <div class="patient-meta">
+                                    <span class="patient-name">Sunita R.</span>
                                     <div class="star-rating">
                                         <i data-lucide="star" class="star-fill"></i>
                                         <i data-lucide="star" class="star-fill"></i>
@@ -401,9 +436,6 @@
                 <div class="slider-controls">
                     <button class="slider-arrow" id="prevTestimonial" aria-label="Previous testimonial"><i data-lucide="chevron-left"></i></button>
                     <div class="slider-dots" id="sliderDots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
                     </div>
                     <button class="slider-arrow" id="nextTestimonial" aria-label="Next testimonial"><i data-lucide="chevron-right"></i></button>
                 </div>
@@ -559,14 +591,8 @@
             <!-- Column 1: Brand -->
             <div class="footer-col brand-col">
                 <a href="#home" class="logo-wrapper">
-                    <div class="logo-icon-circle minimal">
-                        <svg viewBox="0 0 100 100" class="logo-tooth-svg">
-                            <path d="M35 25 C 38 23, 48 20, 50 25 C 52 20, 62 23, 65 25 C 73 32, 75 52, 73 68 C 71 78, 65 88, 63 93 C 61 98, 55 98, 55 93 C 55 83, 58 73, 58 65 C 58 60, 55 58, 52 58 C 49 58, 46 60, 46 65 C 46 73, 49 83, 49 93 C 49 98, 43 98, 41 93 C 39 88, 33 78, 31 68 C 29 52, 31 32, 35 25 Z" fill="none" stroke="currentColor" stroke-width="4.5" />
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        <span class="logo-primary">PritiSmile</span>
-                        <span class="logo-secondary" data-translate="dr_surgeon">Dental Clinic</span>
+                    <div class="logo-img-crop">
+                        <img src="assets/Logo.png" alt="PritiSmile Dental Clinic Logo" class="logo-img">
                     </div>
                 </a>
                 <p class="brand-desc" data-translate="footer_desc">
@@ -619,14 +645,8 @@
             <div class="container footer-bottom-container">
                 <div class="footer-bottom-left">
                     <div class="logo-wrapper white-theme">
-                        <div class="logo-icon-circle">
-                            <svg viewBox="0 0 100 100" class="logo-tooth-svg">
-                                <path d="M35 25 C 38 23, 48 20, 50 25 C 52 20, 62 23, 65 25 C 73 32, 75 52, 73 68 C 71 78, 65 88, 63 93 C 61 98, 55 98, 55 93 C 55 83, 58 73, 58 65 C 58 60, 55 58, 52 58 C 49 58, 46 60, 46 65 C 46 73, 49 83, 49 93 C 49 98, 43 98, 41 93 C 39 88, 33 78, 31 68 C 29 52, 31 32, 35 25 Z" fill="none" stroke="currentColor" stroke-width="5" />
-                            </svg>
-                        </div>
-                        <div class="logo-text">
-                            <span class="logo-primary">PritiSmile</span>
-                            <span class="logo-secondary" data-translate="dr_surgeon">Dental Clinic</span>
+                        <div class="logo-img-crop">
+                            <img src="assets/Logo.png" alt="PritiSmile Dental Clinic Logo" class="logo-img">
                         </div>
                     </div>
                 </div>
@@ -656,13 +676,6 @@
         </div>
         <!-- Sticky Floating Contact Stack -->
         <div class="sticky-contact-stack">
-            <!-- WhatsApp Button -->
-            <a href="https://wa.me/919769120744" target="_blank" rel="noopener noreferrer" class="sticky-stack-btn whatsapp-btn" aria-label="Chat on WhatsApp">
-                <svg viewBox="0 0 24 24" class="whatsapp-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.395 9.86-9.813.001-2.624-1.02-5.09-2.871-6.944C16.612 2.04 14.14 1.019 11.517 1.02 6.082 1.018 1.66 5.418 1.658 10.837c-.001 1.682.449 3.323 1.307 4.766l-.993 3.626 3.682-.975zm11.758-5.636c-.328-.164-1.94-.959-2.241-1.069-.301-.111-.52-.164-.738.164-.219.329-.848 1.069-1.039 1.288-.192.219-.383.246-.711.082-.328-.164-1.386-.511-2.64-1.63-1.016-.906-1.702-2.025-1.902-2.368-.2-.343-.021-.529.143-.692.147-.147.329-.383.493-.575.164-.192.219-.329.329-.548.11-.219.055-.411-.027-.575-.082-.164-.738-1.78-.993-2.397-.247-.604-.515-.515-.711-.515H7.38c-.219 0-.575.082-.875.411-.3.329-1.15 1.123-1.15 2.739 0 1.616 1.177 3.177 1.341 3.396.164.22 2.313 3.532 5.6 4.95 1.948.841 3.468 1.148 4.646.974 1.317-.192 1.94-.959 2.241-1.069zm0 0"/>
-                </svg>
-                <span data-translate="sticky_whatsapp">WhatsApp Us</span>
-            </a>
             <!-- Call Button -->
             <a href="tel:+919769120744" class="sticky-stack-btn call-btn" aria-label="Call Clinic">
                 <i data-lucide="phone"></i>
