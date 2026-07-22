@@ -280,8 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             test_body_neha: "Very friendly and explains everything patiently. The clinic is clean, modern and makes you feel comfortable.",
             test_body_priyanka: "Amazing experience! Got my treatment done without any pain. Highly recommend Dr. Priti Parmar.",
             test_body_rahul: "Professional, gentle and genuinely cares about her patients. The best dental care I've ever received.",
-            test_body_vikram: "Highly professional clinic. Dr. Priti and her staff follow top-notch hygiene protocols. The root canal treatment was completely painless, and she explained the process very clearly.",
-            test_body_sunita: "Excellent experience for my children. Dr. Priti Parmar is very gentle and friendly with kids, making them feel absolutely safe and comfortable during the extraction.",
+
             test_google_btn: "Give us Reviews on google 😊",
             contact_badge: "GET IN TOUCH",
             contact_title: 'We\'re here<br><span class="italic-highlight">to help.</span>',
@@ -389,8 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
             test_body_neha: "बहुत दोस्ताना व्यवहार और धैर्यपूर्वक सब कुछ समझाती हैं। क्लीनिक साफ, आधुनिक है और आपको सहज महसूस कराता है।",
             test_body_priyanka: "अद्भुत अनुभव! बिना किसी दर्द के मेरा इलाज हो गया। डॉ. प्रीति परमार की अत्यधिक अनुशंसा करते हैं।",
             test_body_rahul: "पेशेवर, सौम्य और वास्तव में अपने मरीजों की परवाह करती हैं। दंत चिकित्सा की सबसे अच्छी देखभाल जो मुझे कभी मिली है।",
-            test_body_vikram: "अत्यंत पेशेवर क्लीनिक। डॉ. प्रीति और उनका स्टाफ सर्वोत्तम स्वच्छता नियमों का पालन करता है। रूट कैनाल का इलाज पूरी तरह से दर्द रहित था, और उन्होंने प्रक्रिया को बहुत स्पष्ट रूप से समझाया।",
-            test_body_sunita: "मेरे बच्चों के लिए बेहतरीन अनुभव। डॉ. प्रीति परमार बच्चों के साथ बहुत कोमल और मित्रवत हैं, जिससे वे दांत निकालने के दौरान बिल्कुल सुरक्षित और सहज महसूस करते हैं।",
+
             test_google_btn: "हमें गूगल पर समीक्षाएं दें 😊",
             contact_badge: "संपर्क करें",
             contact_title: 'हम यहाँ हैं<br><span class="italic-highlight">आपकी मदद के लिए।</span>',
